@@ -118,11 +118,10 @@ public class DrinkShopController {
         if (r == null) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error");
-            alert.setHeaderText("Selectati o reteta pentru care adugati un produs");
+            alert.setHeaderText("Selectati o reteta pentru care adaugati un produs");
             alert.showAndWait();
             return;
-        }else
-        if (service.getAllProducts().stream().filter(p->p.getId()==r.getId()).toList().size()>0) {
+        }else if (service.getAllProducts().stream().filter(p->p.getId()==r.getId()).toList().size()>0) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Error");
             alert.setHeaderText("Exista un produs cu reteta adaugata.");
@@ -142,8 +141,25 @@ public class DrinkShopController {
     private void onUpdateProduct() {
         Product selected = productTable.getSelectionModel().getSelectedItem();
         if (selected == null) return;
+        String pretText = txtProdPrice.getText();
+        if (pretText == null || pretText.trim().isEmpty()) {
+            showError("Price cannot be empty.");
+            return;
+        }
+
+        double pret;
+        try {
+            pret = Double.parseDouble(pretText);
+        } catch (NumberFormatException e) {
+            showError("Price must be a valid number.");
+            return;
+        }
+        if (pret <= 0) {
+            showError("Price must be greater than 0.");
+            return;
+        }
         service.updateProduct(selected.getId(), txtProdName.getText(),
-                Double.parseDouble(txtProdPrice.getText()),
+                pret,
                 comboProdCategorie.getValue(), comboProdTip.getValue());
         initData();
     }

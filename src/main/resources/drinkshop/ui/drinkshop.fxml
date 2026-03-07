@@ -133,6 +133,13 @@
                 <Button text="Export CSV" onAction="#onExportOrdersCsv"/>
                 <Button text="Update Revenue" onAction="#onDailyRevenue"/>
                 <Label fx:id="lblTotalRevenue" text="Daily Revenue: 0"/>
+
+
+            </HBox>
+
+            <HBox>
+                <Label fx:id="lblFilename" text="Filename"/>
+                <TextField fx:id="txtFilename" promptText="Fisier"/>
             </HBox>
 
         </VBox>
