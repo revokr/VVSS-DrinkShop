@@ -15,6 +15,26 @@ public class ProductService {
     }
 
     public void addProduct(Product p) {
+        if (p == null) {
+            throw new IllegalArgumentException("Produsul nu poate fi null.");
+        }
+
+        if (p.getNume() == null) {
+            throw new IllegalArgumentException("Numele produsului nu poate fi null.");
+        }
+
+        if (p.getNume().trim().isEmpty()) {
+            throw new IllegalArgumentException("Numele produsului nu poate fi gol.");
+        }
+
+        if (p.getNume().length() > 50) {
+            throw new IllegalArgumentException("Numele produsului este prea lung.");
+        }
+
+        if (p.getPret() < 1 || p.getPret() > 129) {
+            throw new IllegalArgumentException("Pretul produsului trebuie sa fie in intervalul [1, 129].");
+        }
+
         productRepo.save(p);
     }
 
