@@ -41,9 +41,34 @@ public class OrderService {
     }
 
     public double computeTotal(Order o) {
-        return o.getItems().stream()
-                .mapToDouble(i -> productRepo.findOne(i.getProduct().getId()).getPret() * i.getQuantity())
-                .sum();
+        double total = 0.0; // 1
+
+        if (o == null || o.getItems() == null) { // 2
+            return 0.0; // 3
+        }
+
+        for (OrderItem i : o.getItems()) { // 4
+            if (i == null || i.getProduct() == null) { // 5
+                continue; // 6
+            }
+
+            Product p = productRepo.findOne(i.getProduct().getId()); // 7
+
+            if (p == null) { // 8
+                continue; // 9
+            }
+
+            double price = p.getPret(); // 10
+            int quantity = i.getQuantity(); // 11
+
+            if (price > 0 && quantity > 0) { // 12
+                total += price * quantity; // 13
+            } else if (price <= 0 || quantity <= 0) { // 14
+                continue; // 15
+            }
+        }
+
+        return total; // 16
     }
 
     public void addItem(Order o, OrderItem item) {

@@ -12,6 +12,9 @@ public class OrderItem implements Serializable {
         this.quantity = quantity;
     }
 
+    public OrderItem() {
+    }
+
     public Product getProduct() {
         return product;
     }

@@ -39,8 +39,12 @@ public class ProductService {
     }
 
     public void updateProduct(int id, String name, double price, CategorieBautura categorie, TipBautura tip) {
-        Product updated = new Product(id, name, price, categorie, tip);
-        productRepo.update(updated);
+        if (id < 0) return;
+        else if (name.isEmpty() || price < 0.0 || categorie == null || tip == null) return;
+        else {
+            Product updated = new Product(id, name, price, categorie, tip);
+            Product prod = productRepo.update(updated);
+        }
     }
 
     public void deleteProduct(int id) {
