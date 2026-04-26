@@ -2,6 +2,8 @@ package drinkshop.service;
 
 import drinkshop.domain.*;
 import drinkshop.repository.Repository;
+import drinkshop.service.validator.ProductValidator;
+import drinkshop.service.validator.Validator;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -9,31 +11,20 @@ import java.util.stream.Collectors;
 public class ProductService {
 
     private final Repository<Integer, Product> productRepo;
+    private final Validator<Product> productValidator;
 
     public ProductService(Repository<Integer, Product> productRepo) {
         this.productRepo = productRepo;
+        this.productValidator = new ProductValidator();
+    }
+
+    public ProductService(Repository<Integer, Product> productRepo, Validator<Product> validator) {
+        this.productRepo = productRepo;
+        this.productValidator = validator;
     }
 
     public void addProduct(Product p) {
-        if (p == null) {
-            throw new IllegalArgumentException("Produsul nu poate fi null.");
-        }
-
-        if (p.getNume() == null) {
-            throw new IllegalArgumentException("Numele produsului nu poate fi null.");
-        }
-
-        if (p.getNume().trim().isEmpty()) {
-            throw new IllegalArgumentException("Numele produsului nu poate fi gol.");
-        }
-
-        if (p.getNume().length() > 50) {
-            throw new IllegalArgumentException("Numele produsului este prea lung.");
-        }
-
-        if (p.getPret() < 1 || p.getPret() > 129) {
-            throw new IllegalArgumentException("Pretul produsului trebuie sa fie in intervalul [1, 129].");
-        }
+        productValidator.validate(p);
 
         productRepo.save(p);
     }

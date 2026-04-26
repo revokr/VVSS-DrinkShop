@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><title>testspec Proiect235 - nmir3583_InT</title>
+<link type="text/css" rel="stylesheet" href="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/css/tl_documents.css" />
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+</head>
+<body>
+<div>
+<div style="float:right;">TestLink Community [configure $tlCfg-&gt;document_generator-&gt;company_name]</div>
+<div>&nbsp;</div><hr />
+<p style="text-align: center;"><img alt="TestLink logo" title="configure using $tlCfg->document_generator->company_logo"  width= height= src="https://www.scs.ubbcluj.ro/testlink/gui/themes/default/images/tl-logo-transparent-25.png" /></p></div>
+<div class="doc_title"><p>Test Specification</p></div>
+<div class="doc_title" style="text-align:left;margin: auto;"><p>Test Project: Proiect235<br/>Test Suite: Proiect235 - nmir3583_InT</p></div>
+<div class="summary"><p id="printedby">Printed by TestLink on 26/04/2026</p></div>
+<div class="pagefooter" id="copyright">2012 &copy; TestLink Community</div>
+<h1 class="general" style="page-break-before: always">Table Of Contents</h1><div class="toc"><p style="padding-left: 20px;"><b><a href="#toc_1">1.nmir3583_InT</a></b></p>
+<p style="padding-left: 45px;"><a href="#toc_tc30524">P235-59: TC_S_addProduct_Valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc30526">P235-60: TC_SV_addProduct_Valid</a></p><p style="padding-left: 45px;"><a href="#toc_tc30528">P235-61: TC_SVR_addProduct_Invalid</a></p><p style="padding-left: 45px;"><a href="#toc_tc30530">P235-62: TC_SVR_addProduct_Valid</a></p></div><h1 class="doclevel" >Scope</h1>
+<div class="txtlevel"><p>Proiect de testare pentru studentii din grupa 235.</p></div>
+ <br/><a name='toc_1'></a>
+<h1 class='doclevel'>1.Test Suite : nmir3583_InT</h1>
+<div><p>Suita teste laboratorul 4</p>
+</div><a name="toc_tc30524"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P235-59: TC_S_addProduct_Valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">nmir3583</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Steps:<br />
+1. Se creează un produs valid<br />
+2. Se apelează metoda addProduct<br />
+<br />
+Expected result:<br />
+- Validatorul este apelat<br />
+- Repository.save este apelat cu produsul</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>- ProductService instanțiat cu repository mock și validator mock</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">nmir3583_F01:  nmir3583_F01 [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30526"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P235-60: TC_SV_addProduct_Valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">nmir3583</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Steps:<br />
+1. Se creează produs valid<br />
+2. Se apelează addProduct<br />
+<br />
+Expected result:<br />
+- Produsul este salvat &icirc;n repository</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>- ProductService cu validator real și repository mock</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">nmir3583_F01:  nmir3583_F01 [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30528"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P235-61: TC_SVR_addProduct_Invalid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">nmir3583</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Steps:<br />
+1. Se creează produs invalid (id &lt;= 0)<br />
+2. Se apelează addProduct<br />
+<br />
+Expected result:<br />
+- Se aruncă ValidationException<br />
+- Repository răm&acirc;ne gol</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>- Repository real, Validator real, Service real</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">nmir3583_F01:  nmir3583_F01 [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+<a name="toc_tc30530"></a><p>&nbsp;</p><div> <table class="tc" width="90%" ><tr><th colspan="4">Test Case P235-62: TC_SVR_addProduct_Valid&nbsp;<span style="font-size: 80%;">[Version  : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="3">nmir3583</td></tr>
+<tr><td colspan="4"><span class="label">Summary:</span><br /><p>Steps:<br />
+1. Se creează produs valid<br />
+2. Se apelează addProduct<br />
+3. Se apelează getAllProducts<br />
+<br />
+Expected result:<br />
+- Lista conține produsul adăugat</p>
+</td></tr><tr><td colspan="4"><span class="label">Preconditions:</span><br /><p>- ProductService cu validator real și repository real<br />
+- Fișier existent&nbsp;</p>
+</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="3">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="3"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="3">Medium</td></tr>
+<tr><td colspan="4"></td></tr><tr><td > name of the autotest class:</td><td  colspan = "3" ></td></tr>
+<tr><td > name of the test method:</td><td  colspan = "3" ></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Requirements</span><td colspan="3">nmir3583_F01:  nmir3583_F01 [Version : 1]<br /></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="3">&nbsp;None<br/></td></tr>
+</table>
+</div>
+
+</body>
+</html>
